@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change contents of an element notes</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <h1>Change contents of notes</h1>
+        <div class="row">
+            <div>
+                <label for="first">First name</label>
+                <input type="text" id="first" name="first_name" placeholder="jane">
+            </div>
+        </div>
+        <label for="first">First name</label>
+        <input type="text" id="last" name="last_name" placeholder="doe">
+    </div>
+</div>
+<button name="clear">clear</button>
+<p></p>
+<div>
+    <script>
+        const firstname = document.getElementById('first');
+        const lastname = document.getElementById('last');
+        const full = document.querySelector('p');
+        const clearbutton = document.querySelector('[name="clear"]');
+        firstname.addEventListener('change'),function (e){
+            let first = firstname.value;
+            let last = lastname.value;
+            let fullname = `Hello ${first} ${last}!`;
+            full.textContent = fullname;
+        });
+clearbutton.addEventListener('click',function (e) {
+firstname.value = "";
+lastname.value = "";
+full.textContent = "";
+})
+    </script>
+</div>
+</body>
+</html>
